@@ -144,7 +144,7 @@ export default class App extends Component {
     }
 
     rawQuery(payload) {
-        const elasticUrl = 'http://67a7441549120daa2dbeef8ac4f5bb2e.us-east-1.aws.found.io:9200';
+        const elasticUrl = '//67a7441549120daa2dbeef8ac4f5bb2e.us-east-1.aws.found.io:9200';
         const indexName = 'sample-data';
         const typeId = 'test-type';
         this.setState({status: 'loading...'});
