@@ -144,11 +144,14 @@ export default class App extends Component {
     }
 
     rawQuery(payload) {
+        const protocol = window.location.protocol;
+        console.warn('protocol: ', protocol);
         const elasticUrl = '//67a7441549120daa2dbeef8ac4f5bb2e.us-east-1.aws.found.io:9200';
         const indexName = 'sample-data';
         const typeId = 'test-type';
         this.setState({status: 'loading...'});
-        const request = `${elasticUrl}/${indexName}/_search`;
+        const request = `${protocol}${elasticUrl}/${indexName}/_search`;
+        console.warn('request: ', request);
         const body = JSON.stringify(payload);
 
         return fetch(request,{
